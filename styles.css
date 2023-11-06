@@ -64,10 +64,10 @@ a{
     left:0;
     background-position: 50%;
     background-size: cover;
-    min-height: 100%;
-    max-height: fit-content;
+    height: fit-content + 10vh;
     width: 100%;
     z-index: 0;
+    padding-bottom: 20vh;
 }
 #backgroundPhoto{
     background-image: url("https://demos.creative-tim.com/paper-kit-2-pro/assets/img/sections/pk-pro-cover.jpg");
@@ -99,11 +99,13 @@ a{
     width: 100%;
     height: fit-content;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px,1fr));   
+    grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
+    grid-template-rows: min-content;   
     justify-items: center; 
     row-gap: 2vh;
 }
 .card{
+    height: fit-content;
     width: 83.33%;
     margin: auto;
     aspect-ratio: 16/9;
@@ -219,6 +221,11 @@ footer{
     font-size: 2rem;
     color: var(--grey);
 }
+.nav-item.trigram {
+    display: none; 
+    text-decoration: none; 
+    font-size: 2rem; 
+}
 @media screen and (max-width: 768px){
     .navText{
         font-size: 3rem;
@@ -242,29 +249,20 @@ footer{
     h2:first-child{
         font-size: 100%;
     }
+    .break{
+        width: 10%;
+    }
+    #pTitle{
+        font-size: 2.5em;
+    }
+    .topnav a{display: none; align-self: center;}
+    .topnav a.trigram {display:inherit; position: fixed; right:4%; font-size:3.5em;}
+    .topnav.responsive.responsive {align-items: center;} 
+    .topnav.responsive a{display:inherit;} 
+    .topnav.responsive a:not(:last-child) {display:inherit; padding-top:1em;} 
+    .topnav.responsive a.more {margin-bottom: 1em;} 
+    .topnav.responsive a.trigram {visibility:hidden; transition:none;} 
+    .topnav.responsive a.trigram:after {content:'\000D7'; visibility:visible; text-indent: -.5em;} 
 }
-@media screen and (max-width: 480px){
-    .navText{
-        font-size: 2.5rem;
-    }
-    .cardTitleFlex{
-        align-items: center;
-        gap: 0.5vh;
-    }
-    #cardTitle{
-        font-size: 90%;
-    }
-    #viewButton{
-        font-size: 100%;
-    }
-    #shareButton{
-        font-size: 100%;
-    }
-    #downloadButton{
-        font-size: 90%;
-    }
-    h2:first-child{
-        font-size: 60%;
-    }
-}
+
 /*
