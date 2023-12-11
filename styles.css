@@ -27,7 +27,7 @@ a{
 .break{
     border: 2px solid white;
     border-radius: 5px;
-    margin: 1em auto;
+    margin: 1em 1em;
     width: 25%;
     height: 1px;
 }
@@ -37,26 +37,24 @@ a{
     flex-direction: row;
     height: 15vh;
     justify-content: flex-start;
-    gap: 2vh;
     align-items: center;
     z-index: 1;
 }
+#navbarId{
+    padding-right: 3em;
+}
 #navbarLogo{
+    max-width:100%;
+    height: 10vh;
+    padding-left: 2vh;
+    padding-top: 1vh;
     -webkit-mask-image: linear-gradient(to bottom,var(--black) 10%,transparent 90%);
     mask-image: linear-gradient(to bottom,var(--black) 10%,transparent 90%);
     filter: invert(100%);
 }
-#navLogo{
-    width: 125px;
-    height: 125px;
-}
-.navText{
-    font-size: 4rem;
+.nav-link{
+    font-size: 2rem;
     transition: color 1.25s;
-}
-#navTextContainer{
-    display: inherit;
-    gap: 1.5vh;
 }
 .pageWrapper{
     position: absolute;
@@ -64,7 +62,7 @@ a{
     left:0;
     background-position: 50%;
     background-size: cover;
-    height: fit-content + 10vh;
+    height: fit-content+10vh;
     width: 100%;
     z-index: 0;
     padding-bottom: 20vh;
@@ -91,6 +89,7 @@ a{
     flex-direction: row;
     gap: 0.5vh;
     align-items: center;
+    z-index: -2;
 }
 .projectTitle h1{
     font-size: 5rem;
@@ -103,6 +102,8 @@ a{
     grid-template-rows: min-content;   
     justify-items: center; 
     row-gap: 2vh;
+    z-index: 2;
+    padding-top: 2vh;
 }
 .card{
     height: fit-content;
@@ -153,7 +154,7 @@ a{
     z-index: 10;
     display: grid;
     grid-template-columns: [leftEdge]3% [leftItems]45% [center] 49% [rightItems] 3% [rightEdge];
-    grid-template-rows: [top1]5%[startItem] 25% [logoContainer]50% [description] 15% [last] 5% [bttm];
+    grid-template-rows: [top1]5%[startItem] 25% [logoContainer]50% [description] auto [last] 5% [bttm];
     transition: top ease 0.5s;
 }
 .cardTitleFlex{
@@ -167,7 +168,8 @@ a{
     align-items: center;
 }
 #viewButton{
-    font-size: 175%;;
+    font-size: 175%;
+    color: var(--white);
     &:hover {
         color:var(--navblue);
         transition: ease-in-out 0.5s;
@@ -176,7 +178,8 @@ a{
 #shareButton{
     align-self: center;
     margin-left: auto;
-    font-size: 175%;;
+    font-size: 175%;
+    color: var(--white);
     &:hover {
         color:var(--navblue);
         transition: ease-in-out 0.5s;
@@ -186,6 +189,7 @@ a{
 #downloadButton{
     align-self: center;
     font-size: 175%;;
+    color: var(--white);
     &:hover {
         color:var(--navblue);
         transition: ease-in-out 0.5s;
@@ -196,19 +200,26 @@ a{
     font-weight: 100;
     text-align: left;
     align-self: center;
+    color: var(--white);
 }
 .cardDescContainer{
     grid-column-start: leftItems;
     grid-column-end: rightItems;
     grid-row-start: logoContainer;
     grid-row-end: last;
+    width: 100%;
 }
-h2:first-child{
+.cardDescContainer h2{
+    min-width: 0;
+    min-height: 0;
     font-weight: 100;
     font-size: 125%;
-    text-align: left;
     color: var(--grey);
     margin-top: auto;
+    word-wrap: break-word;
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
 }
 footer{
     position: fixed;
@@ -227,6 +238,17 @@ footer{
     font-size: 2rem; 
 }
 @media screen and (max-width: 768px){
+    .pageWrapper{
+        position: absolute;
+        top: 0;
+        left:0;
+        background-position: 50%;
+        background-size: cover;
+        height: fit-content+10vh;
+        width: 100%;
+        z-index: 0;
+        padding-bottom: 20vh;
+    }
     .navText{
         font-size: 3rem;
     }
@@ -250,7 +272,7 @@ footer{
         font-size: 100%;
     }
     .break{
-        width: 10%;
+        margin: 1em 1em;
     }
     #pTitle{
         font-size: 2.5em;
