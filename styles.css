@@ -14,7 +14,6 @@ body{
     font-family: 'Agdasima', sans-serif;
     overflow-x: hidden;
     color: var(--white);
-    height: 100%;
 }
 div{
     overflow: hidden;
@@ -62,10 +61,10 @@ a{
     left:0;
     background-position: 50%;
     background-size: cover;
-    height: fit-content+10vh;
+    height: fit-content;
     width: 100%;
     z-index: 0;
-    padding-bottom: 20vh;
+    padding-bottom: 25vh;
 }
 #backgroundPhoto{
     background-image: url("https://demos.creative-tim.com/paper-kit-2-pro/assets/img/sections/pk-pro-cover.jpg");
@@ -89,6 +88,7 @@ a{
     flex-direction: row;
     gap: 0.5vh;
     align-items: center;
+    justify-content: center;
     z-index: -2;
 }
 .projectTitle h1{
@@ -100,10 +100,11 @@ a{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
     grid-template-rows: min-content;   
-    justify-items: center; 
+    justify-content: center; 
     row-gap: 2vh;
     z-index: 2;
-    padding-top: 2vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
 }
 .card{
     height: fit-content;
@@ -144,7 +145,7 @@ a{
 }
 #prePrkImg{
     border-radius: 1rem;
-    max-width: 100%;
+    width: 100%;
     padding: 0.5vh;
     margin: auto;
 }
@@ -221,21 +222,8 @@ a{
     white-space: normal;
     overflow: visible;
 }
-footer{
-    position: fixed;
-    bottom: 0;
-    width:100%;
-    height: 10vh;
-}
-#copyRight{
-    text-align: center;
-    font-size: 2rem;
-    color: var(--grey);
-}
-.nav-item.trigram {
-    display: none; 
-    text-decoration: none; 
-    font-size: 2rem; 
+#pTitle{
+    font-size: 4em;
 }
 @media screen and (max-width: 768px){
     .pageWrapper{
@@ -244,7 +232,7 @@ footer{
         left:0;
         background-position: 50%;
         background-size: cover;
-        height: fit-content+10vh;
+        height: fit-content;
         width: 100%;
         z-index: 0;
         padding-bottom: 20vh;
@@ -277,14 +265,6 @@ footer{
     #pTitle{
         font-size: 2.5em;
     }
-    .topnav a{display: none; align-self: center;}
-    .topnav a.trigram {display:inherit; position: fixed; right:4%; font-size:3.5em;}
-    .topnav.responsive.responsive {align-items: center;} 
-    .topnav.responsive a{display:inherit;} 
-    .topnav.responsive a:not(:last-child) {display:inherit; padding-top:1em;} 
-    .topnav.responsive a.more {margin-bottom: 1em;} 
-    .topnav.responsive a.trigram {visibility:hidden; transition:none;} 
-    .topnav.responsive a.trigram:after {content:'\000D7'; visibility:visible; text-indent: -.5em;} 
 }
 
 /*
